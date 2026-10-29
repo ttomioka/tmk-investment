@@ -35,6 +35,7 @@
   </properties>
 
   <modules>
+    <module>tmk-investment-core</module>
   </modules>
 
   <dependencyManagement>
