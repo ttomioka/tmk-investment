@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration xmlns="http://www.jooq.org/xsd/jooq-codegen-3.19.28.xsd">
+
+  <generator>
+    <database>
+      <name>org.jooq.meta.mysql.MySQLDatabase</name>
+      <inputSchema>tmk_trader</inputSchema>
+      <includes>.*</includes>
+      <excludes></excludes>
+    </database>
+
+    <generate>
+      <daos>true</daos>
+      <pojos>true</pojos>
+      <records>true</records>
+    </generate>
+
+    <target>
+      <directory>src/main/generated</directory>
+      <packageName>jp.tmkworks.tmk_trader.port.rdb</packageName>
+    </target>
+  </generator>
+
+</configuration>
