@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: api-crawler
+
+  autoconfigure:
+    exclude: io.axoniq.framework.springboot.autoconfig.PersistentStreamAutoConfiguration
+
+  profiles:
+    default: local-dev
+    group:
+      local-dev: local-mysql 
+      vps-prod: [prod-mysql ,oauth2-github]
+   
+
+logging:
+  level:
+    "rest-client":
+      "access-detail-log": INFO
+    org.jooq.Constants: "WARN"
+    "org.springframework.cache": DEBUG
+    "org.springframework.cache.interceptor": DEBUG
+    "org.axonframework.update.UpdateCheckerHttpClient": ERROR
+    "org.axonframework.update.LoggingUpdateCheckerReporter" : ERROR
+
+---
+spring:
+  config:
+    activate:
+      on-profile: "local-mysql"
+    
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/tmk_trader
+    username: devuser
+    password: devuser
+    hikari:
+      initialization-fail-timeout: 1

@@ -33,6 +33,10 @@ public abstract class LocalDateValue implements SingleFieldValue<LocalDate>, Com
     return value.format(formatter);
   }
   
+  public String formatIsoLocalDate() {
+    return value.format(DateTimeFormatter.ISO_LOCAL_DATE);
+  }
+  
   @Override
   public String toString() {
     return value.toString();

@@ -19,6 +19,10 @@ public abstract class StringValue implements SingleFieldValue<String>, Serializa
   public String string() {
     return value;
   }
+  
+  public String getString() {
+    return value;
+  }
 
   @Override
   public String toString() {
