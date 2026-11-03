@@ -1,5 +1,9 @@
 package jp.tmkworks.tmk_investment.marketdata;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.temporal.TemporalAdjusters;
+
 import org.axonframework.messaging.commandhandling.gateway.CommandGateway;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -34,7 +38,11 @@ public class CommandRunners {
 
       @Override
       public void run(String... args) throws Exception {
-        var a取得対象日 = 取得期間.of("2026-10-30", "2026-10-30");
+        var 前の月曜日Ajuster = TemporalAdjusters.previous(DayOfWeek.MONDAY);
+        var 前の月曜日 = LocalDate.now().with(前の月曜日Ajuster);
+        var 今日 = LocalDate.now();
+        
+        var a取得対象日 = 取得期間.of(前の月曜日, 今日);
         var command = new JQuants株価四本値取得Command(a取得対象日);
         commandGateway.sendAndWait(command);
       }
