@@ -38,6 +38,7 @@
   <modules>
     <module>tmk-investment-core</module>
     <module>tmk-investment-marketdata</module>
+    <module>tmk-investment-preanalysis</module>
   </modules>
 
   <dependencyManagement>
