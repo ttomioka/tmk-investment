@@ -18,6 +18,10 @@ public abstract class AbstractStandardList<T> {
   public int size() {
     return list.size();
   }
+  
+  public boolean contains(T t) {
+    return list.contains(t);
+  }
 
   public Stream<T> stream() {
     return list.stream();

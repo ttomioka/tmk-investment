@@ -16,13 +16,13 @@ public class 日付 extends LocalDateValue {
     super(value);
   }
 
-  @JsonCreator
   public static 日付 of(String text) {
     var localDate = LocalDate.parse(text);
     return of(localDate);
   }
 
-  static 日付 of(LocalDate localDate) {
+  @JsonCreator
+  public static 日付 of(LocalDate localDate) {
     return CACHE.computeIfAbsent(localDate, 日付::new);
   }
   

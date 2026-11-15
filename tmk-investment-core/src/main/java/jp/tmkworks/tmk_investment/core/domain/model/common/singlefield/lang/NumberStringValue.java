@@ -5,6 +5,9 @@ import java.math.BigDecimal;
 
 import org.apache.commons.lang3.NotImplementedException;
 import org.apache.commons.lang3.StringUtils;
+import org.ta4j.core.num.DecimalNum;
+
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import jp.tmkworks.tmk_investment.core.domain.model.common.singlefield.SingleFieldValue;
 
@@ -40,17 +43,22 @@ public class NumberStringValue extends Number implements SingleFieldValue<String
     throw new NotImplementedException();
   }
   
-  public BigDecimal bigDecimal() {
+  public BigDecimal bigDecimalValue() {
     return new BigDecimal(value);
   }
   
+  public DecimalNum decimalNumValue() {
+    return DecimalNum.valueOf(value);
+  }
+  
   public BigDecimal multiply(NumberStringValue other) {
-    var a = bigDecimal();
-    var b = other.bigDecimal();
+    var a = bigDecimalValue();
+    var b = other.bigDecimalValue();
     var result = a.multiply(b);
     return result;
   }
 
+  @JsonValue
   public String string() {
     return value;
   }

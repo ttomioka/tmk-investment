@@ -19,6 +19,10 @@
       <directory>src/main/generated</directory>
       <packageName>jp.tmkworks.tmk_investment.core.port.rdb</packageName>
     </target>
+    
+    <strategy>
+      <name>jp.tmkworks.tmk_investment.util.jooq.generator.CustomGeneratorStrategy</name>
+    </strategy>
   </generator>
 
 </configuration>

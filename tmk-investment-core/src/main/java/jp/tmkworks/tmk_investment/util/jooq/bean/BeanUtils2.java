@@ -77,7 +77,7 @@ public class BeanUtils2 {
   }
 
   public static Optional<Method> findJsonValueMethod(Class<?> type) {
-    return Arrays.stream(type.getDeclaredMethods())
+    return Arrays.stream(type.getMethods())
         .filter(method -> method.isAnnotationPresent(JsonValue.class))
         .findFirst();
   }

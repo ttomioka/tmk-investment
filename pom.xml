@@ -48,6 +48,7 @@
         <artifactId>tmk-investment-core</artifactId>
         <version>${project.version}</version>
       </dependency>
+      
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
@@ -62,6 +63,7 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+      
       <dependency>
         <groupId>com.github.f4b6a3</groupId>
         <artifactId>ulid-creator</artifactId>
@@ -77,6 +79,12 @@
         <artifactId>guava</artifactId>
         <version>${guava.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.ta4j</groupId>
+        <artifactId>ta4j-core</artifactId>
+        <version>0.28.0</version>
+      </dependency>
+      
       <dependency>
         <groupId>org.webjars</groupId>
         <artifactId>bootstrap</artifactId>
